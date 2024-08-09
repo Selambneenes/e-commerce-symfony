@@ -3,19 +3,23 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1 class="bg-cyan-400 text-xl">Register</h1>
-
-    {{ form_errors(registrationForm) }}
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.lastName) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <div class="h-screen w-full absolute -z-[2]">
+        <img src="{{ asset('assets/img/user__process__bg.png') }}" alt="">
+    </div>
+    <div class="container mx-auto  h-screen flex items-center">
+        <div class="w-[35rem] mx-auto bg-white/70 backdrop-blur-md py-6 px-10 rounded-3xl flex flex-col justify-center">
+            <h1 class="text-slate-900 text-3xl text-center mb-8">Register</h1>
+            {{ form_errors(registrationForm) }}
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.firstName) }}
+                {{ form_row(registrationForm.lastName) }}
+                {{ form_row(registrationForm.plainPassword, {
+                    label: 'Password'
+                }) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+                <button type="submit" class="btn text-white text-xl">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
 {% endblock %}
